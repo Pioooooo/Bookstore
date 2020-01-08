@@ -7,6 +7,7 @@
 #include <sstream>
 #include <streambuf>
 #include <cstdio>
+#include <string>
 #include "Config.h"
 #include "Log.h"
 #include "Basic.h"
