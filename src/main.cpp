@@ -1,10 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include "Command.h"
+#include "MD5.h"
+#include <cstring>
 
 int main()
 {
-	std::ifstream fin("command.txt");
+	std::ifstream fin("tmp/command.txt");
 	if(fin)
 	{
 		cmd.doCommandLoop(fin);
