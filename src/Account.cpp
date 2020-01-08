@@ -43,7 +43,7 @@ bool Account::login(const std::string &id, const std::string &password)
 		file.read(curName, 20 * sizeof(char));
 		file.close();
 		std::vector<std::string> tmp;
-		tmp.push_back((std::stringstream() << '<' << curID << "> logged in.").str());
+		tmp.push_back(std::string("<") + curID + "> logged in.");
 		logger.log(LOG_INFO, tmp);
 		return true;
 	}
@@ -58,7 +58,7 @@ bool Account::login(const std::string &id, const std::string &password)
 		std::memset(curID, 0, 30 * sizeof(char));
 		std::strcpy(curID, id.c_str());
 		std::vector<std::string> tmp;
-		tmp.push_back((std::stringstream() << '<' << curID << "> logged in.").str());
+		tmp.push_back(std::string("<") + curID + "> logged in.");
 		logger.log(LOG_INFO, tmp);
 		return true;
 	}
@@ -76,7 +76,7 @@ bool Account::logout()
 		return false;
 	}
 	std::vector<std::string> tmp;
-	tmp.push_back((std::stringstream() << "<" << curID << "> logged out.").str());
+	tmp.push_back(std::string("<") + curID + "> logged out.");
 	logger.log(LOG_INFO, tmp);
 	curType = USER_NULL;
 	std::memset(curID, 0, 20);
